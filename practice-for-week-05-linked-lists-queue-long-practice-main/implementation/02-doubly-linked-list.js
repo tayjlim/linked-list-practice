@@ -46,7 +46,20 @@ class DoublyLinkedList {
         // Remove node at head
         // Your code here
         // Write your hypothesis on the time complexity of this method here
+        if(!this.head) return undefined;
 
+        if(!this.head.next){
+            let current = this.head;
+            this.head = null;
+            this.length --
+            return current.value
+        }
+
+        let value = this.head
+        this.length --;
+        this.head = this.head.next
+        this.head.prev = null;
+        return value.value
     }
 
     removeFromTail() {

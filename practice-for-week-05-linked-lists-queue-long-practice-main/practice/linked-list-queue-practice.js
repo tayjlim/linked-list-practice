@@ -78,7 +78,8 @@ class SinglyLinkedList {
     }
 
     findMid() {
-        console.log(this.listLength())
+        console.log(this.findNthNode(Math.floor(this.listLength())))
+
         // Returns the middle node
         // Implement this as a singly linked list then as a doubly linked list
             // How do the implementation for singly and doubly vary if at all?

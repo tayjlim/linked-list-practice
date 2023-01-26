@@ -30,13 +30,23 @@ class SinglyLinkedList {
     }
 
     listLength() {
-        // Returns the length of the list
-        // Implement in O(n) and in O(1) time complexity
-
-        // Your code here
-    }
+       let counter = 0;
+       let curr = this.head
+       while(curr) {
+        counter++
+        curr = curr.next
+        }
+    return counter;
+}
 
     sumOfNodes() {
+        let add = 0;
+        let curr = this.head
+        while(curr){
+            add += curr.value;
+            curr = curr.next
+        }
+        return add;
         // Returns the sum of the values of all the nodes
 
         // Your code here
@@ -45,7 +55,12 @@ class SinglyLinkedList {
     }
 
     averageValue() {
-        // Returns the average value of all the nodes
+        //return this.sumOfNodes()/this.listLength()
+        let avg = this.sumOfNodes()
+        let avg1 = this.listLength()
+        return avg/avg1
+
+
 
         // Your code here
 
@@ -53,14 +68,17 @@ class SinglyLinkedList {
     }
 
     findNthNode(n) {
-        // Returns the node at the nth index from the head
+        let counter = n;
 
-        // Your code here
-
-        // Write your hypothesis on the time complexity of this method here
+        while(counter > 0){
+            this.head = this.head.next
+            counter--;
+        }
+        return this.head
     }
 
     findMid() {
+        console.log(this.listLength())
         // Returns the middle node
         // Implement this as a singly linked list then as a doubly linked list
             // How do the implementation for singly and doubly vary if at all?
@@ -128,7 +146,7 @@ class DoublyLinkedList {
             // How do the implementation for singly and doubly vary if at all?
 
         // Your code here
-        
+
         // Write your hypothesis on the time complexity of this method here
     }
 
